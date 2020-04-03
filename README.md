@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Using Moment.js, the purpose is to create a calendar application that will run in the browser and feature dynamically updated HTML and CSS powered by jQuery..
+Using [Moment.js](https://momentjs.com/), the purpose is to create a calendar application that will run in the browser and feature dynamically updated HTML and CSS powered by jQuery..
 
 ## Design
 
@@ -38,7 +38,9 @@ THEN the saved events persist
 
 ## Images/Content
 
+
 ```
+
 
 
 ```
