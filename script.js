@@ -9,11 +9,11 @@ $("#currentDay").text(currentDay.format('dddd, ' + 'MMM Do YYYY'));
 // THEN I am presented with timeblocks for standard business hours
 
 var hours = 
-	["8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm"]
+	["8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm",]
 
 var scheduler = $(".container");
 
 $.each(hours, function(i, time){
-	scheduler.append('<div class="time-block"><div class="row"><div class="hour">' + hours[i] + '</div></div></div>');
+	scheduler.append('<div class="time-block"><div class="row"><div class="hour">' + hours[i] + '</div><textarea class="description" placeholder="Description"></textarea><button class="saveBtn">Button</button></div></div>');
 	console.log(time);
 })
