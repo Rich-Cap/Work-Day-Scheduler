@@ -4,3 +4,16 @@
 var currentDay = moment();
 // console.log(currentDay.format('dddd ' + 'MMM Do YYYY'));
 $("#currentDay").text(currentDay.format('dddd, ' + 'MMM Do YYYY'));
+
+// WHEN I scroll down
+// THEN I am presented with timeblocks for standard business hours
+
+var hours = 
+	["8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm"]
+
+var scheduler = $(".container");
+
+$.each(hours, function(i, time){
+	scheduler.append('<div class="time-block"><div class="row"><div class="hour">' + hours[i] + '</div></div></div>');
+	console.log(time);
+})
