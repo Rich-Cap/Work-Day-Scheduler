@@ -1,6 +1,5 @@
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
-
 var currentDay = moment();
 var momentTime = moment('LT');
 // console.log(currentDay);
@@ -11,12 +10,10 @@ $("#currentDay").text(currentDay.format('LLLL'));
 
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
-
 var hours =
 	["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm",]
 
 var scheduler = $(".container");
-// var description = $(".description");
 var save = $(".saveBtn");
 
 $.each(hours, function (i, time) {
@@ -27,11 +24,9 @@ $.each(hours, function (i, time) {
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
+
 // WHEN I click into a timeblock
 // THEN I can enter an event
-
-// init();
-
 var input9am = document.querySelector("#time9am");
 var input10am = document.querySelector("#time10am");
 var input11am = document.querySelector("#time11am");
@@ -54,26 +49,34 @@ var display5pm = document.querySelector("#time5pm");
 
 var saveButton = $(".saveBtn");
 
-
+// WHEN I click the save button for that timeblock
+// THEN the text for that event is saved in local storage
 saveButton.on("click", function(event) {
+	saveSchedule();
+});
+
+function saveSchedule(){
 	event.preventDefault();
 
-	// create time object from submission
+	// create schedule object from submission
 	var schedule = {
-		time9am: input9am.value.trim(),
-		time10am: input10am.value.trim(),
-		time11am: input11am.value.trim(),
-		time12pm: input12pm.value.trim(),
-		time1pm: input1pm.value.trim(),
-		time2pm: input2pm.value.trim(),
-		time3pm: input3pm.value.trim(),
-		time4pm: input4pm.value.trim(),
-		time5pm: input5pm.value.trim(),
+	time9am: input9am.value.trim(),
+	time10am: input10am.value.trim(),
+	time11am: input11am.value.trim(),
+	time12pm: input12pm.value.trim(),
+	time1pm: input1pm.value.trim(),
+	time2pm: input2pm.value.trim(),
+	time3pm: input3pm.value.trim(),
+	time4pm: input4pm.value.trim(),
+	time5pm: input5pm.value.trim(),
 	};
 
 	// set new submission
 	localStorage.setItem("schedule", JSON.stringify(schedule));	
+};
 
+// WHEN I refresh the page
+// THEN the saved events persist
 	// get most recent submission
 	var lastSumbit = JSON.parse(localStorage.getItem("schedule"));
 	display9am.textContent = lastSumbit.time9am;
@@ -85,18 +88,3 @@ saveButton.on("click", function(event) {
 	display3pm.textContent = lastSumbit.time3pm;
 	display4pm.textContent = lastSumbit.time4pm;
 	display5pm.textContent = lastSumbit.time5pm;
-});
-
-// function init() {
-// 	// Get stored todos from localStorage
-// 	// Parsing the JSON string to an object
-// 	var storedSchedule = JSON.parse(localStorage.getItem("schedule"));
-
-// 	// If todos were retrieved from localStorage, update the todos array to it
-// 	if (storedSchedule !== null) {
-// 	schedule = storedSchedule;
-// 	}
-
-// 	// Render todos to the DOM
-// 	renderSchedule();
-// }
