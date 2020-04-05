@@ -38,7 +38,6 @@ THEN the saved events persist
 
 ## Images/Content
 
-
 ```
 
 
