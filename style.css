@@ -16,7 +16,7 @@ textarea{
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-image: url(https://images.unsplash.com/photo-1528458909336-e7a0adfed0a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1245&q=80);
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
@@ -68,7 +68,8 @@ textarea{
   width: 10%;
 }
 
-.saveBtn i:hover {
+.saveBtn:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+  color: #000000;
 }

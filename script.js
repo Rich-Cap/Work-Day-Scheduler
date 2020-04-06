@@ -7,7 +7,6 @@ console.log(moment());
 console.log(moment('12 10').isBefore(moment()));
 // console.log(currentDay.format('dddd ' + 'MMM Do YYYY'));
 $("#currentDay").text(currentDay.format('LLLL'));
-
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
 var hours =
@@ -24,6 +23,77 @@ $.each(hours, function (i, time) {
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
+if ((new Date().getHours()) === 9){
+	$("#time9am").attr("class", "present");
+} else if ((new Date().getHours()) > 9){
+	$("#time9am").attr("class", "past");
+} else{
+	$("#time9am").attr("class", "future");
+};
+
+if ((new Date().getHours()) === 10){
+	$("#time10am").attr("class", "present");
+} else if ((new Date().getHours()) > 10){
+	$("#time10am").attr("class", "past");
+} else{
+	$("#time10am").attr("class", "future");
+};
+
+if ((new Date().getHours()) === 11){
+	$("#time11am").attr("class", "present");
+} else if ((new Date().getHours()) > 11){
+	$("#time11am").attr("class", "past");
+} else{
+	$("#time11am").attr("class", "future");
+};
+
+if ((new Date().getHours()) === 12){
+	$("#time12pm").attr("class", "present");
+} else if ((new Date().getHours()) > 12){
+	$("#time12pm").attr("class", "past");
+} else{
+	$("#time12pm").attr("class", "future");
+};
+
+if ((new Date().getHours()) === 13){
+	$("#time1pm").attr("class", "present");
+} else if ((new Date().getHours()) > 13){
+	$("#time1pm").attr("class", "past");
+} else{
+	$("#time1pm").attr("class", "future");
+};
+
+if ((new Date().getHours()) === 14){
+	$("#time2pm").attr("class", "present");
+} else if ((new Date().getHours()) > 14){
+	$("#time2pm").attr("class", "past");
+} else{
+	$("#time2pm").attr("class", "future");
+};
+
+if ((new Date().getHours()) === 15){
+	$("#time3pm").attr("class", "present");
+} else if ((new Date().getHours()) > 15){
+	$("#time3pm").attr("class", "past");
+} else{
+	$("#time3pm").attr("class", "future");
+};
+
+if ((new Date().getHours()) === 16){
+	$("#time4pm").attr("class", "present");
+} else if ((new Date().getHours()) > 16){
+	$("#time4pm").attr("class", "past");
+} else{
+	$("#time4pm").attr("class", "future");
+};
+
+if ((new Date().getHours()) === 17){
+	$("#time5pm").attr("class", "present");
+} else if ((new Date().getHours()) > 17){
+	$("#time5pm").attr("class", "past");
+} else{
+	$("#time5pm").attr("class", "future");
+};
 
 // WHEN I click into a timeblock
 // THEN I can enter an event
